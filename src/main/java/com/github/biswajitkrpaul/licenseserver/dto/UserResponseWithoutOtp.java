@@ -1,6 +1,4 @@
-package com.github.biswajitkrpaul.authservice.dto;
-
-import lombok.NoArgsConstructor;
+package com.github.biswajitkrpaul.licenseserver.dto;
 
 import java.util.UUID;
 

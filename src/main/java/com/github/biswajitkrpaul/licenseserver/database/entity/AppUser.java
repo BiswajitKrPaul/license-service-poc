@@ -1,4 +1,4 @@
-package com.github.biswajitkrpaul.authservice.database.entity;
+package com.github.biswajitkrpaul.licenseserver.database.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

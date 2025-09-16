@@ -1,4 +1,4 @@
-package com.github.biswajitkrpaul.authservice.utils;
+package com.github.biswajitkrpaul.licenseserver.utils;
 
 import java.security.SecureRandom;
 

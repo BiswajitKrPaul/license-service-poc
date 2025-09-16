@@ -1,6 +1,6 @@
-package com.github.biswajitkrpaul.authservice.database.repositories;
+package com.github.biswajitkrpaul.licenseserver.database.repositories;
 
-import com.github.biswajitkrpaul.authservice.database.entity.AppUser;
+import com.github.biswajitkrpaul.licenseserver.database.entity.AppUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

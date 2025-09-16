@@ -1,8 +1,8 @@
-package com.github.biswajitkrpaul.authservice.service;
+package com.github.biswajitkrpaul.licenseserver.service;
 
-import com.github.biswajitkrpaul.authservice.database.entity.AppUser;
-import com.github.biswajitkrpaul.authservice.database.repositories.AppUserRepository;
-import com.github.biswajitkrpaul.authservice.utils.AppUtils;
+import com.github.biswajitkrpaul.licenseserver.database.entity.AppUser;
+import com.github.biswajitkrpaul.licenseserver.database.repositories.AppUserRepository;
+import com.github.biswajitkrpaul.licenseserver.utils.AppUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -31,6 +31,12 @@ public class AppUserService {
         user.setOtpExpiryDate(Instant.now().plus(Duration.ofMinutes(otpExpiresInMinutes)));
         repository.save(user);
         return user;
+    }
+
+    public boolean verifyOtp(long mobile, int otp) {
+        var user = repository.findByMobile(mobile).orElseThrow(
+                () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Invalid login details"));
+        return user.getOtp() == otp && user.getOtpExpiryDate().isAfter(Instant.now());
     }
 
 
